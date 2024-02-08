@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ DashboardController::class, 'index' ]);
 
+Route::post('/idea', [ DashboardController::class, 'index' ]) ->name('idea.create');
+
 Route::get('/terms', function(){
     return view('terms');
 });

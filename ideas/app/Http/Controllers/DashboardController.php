@@ -7,16 +7,8 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index(){
-
-        $idea = new Idea([
-            'content' =>'hello youtube',
-            'likes' => 3,
-        ]);
-
-        $idea->save();
-
-
+    public function index()
+    {
         return view(
             'dashboard',[
             'ideas'=> Idea::orderBy('created_at', 'DESC')->get(),
